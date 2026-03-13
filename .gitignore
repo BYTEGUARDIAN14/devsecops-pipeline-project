@@ -1,0 +1,11 @@
+# virtualenv
+.venv/
+__pycache__/
+*.pyc
+
+# local env
+.env
+*.env
+
+# OS
+.DS_Store
