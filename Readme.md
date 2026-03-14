@@ -202,6 +202,6 @@ Possible improvements for this project:
 
 ## Author
 
-Mohamed Adhnaan
+Mohamed Adhnaan J M
 
 GitHub: https://github.com/BYTEGUARDIAN14
