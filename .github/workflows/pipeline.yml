@@ -38,8 +38,16 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Tag Docker Image
-        run: docker tag devsecops-demo mohamed1410/devsecops-demo:latest
+      - name: Set version tag
+        id: vars
+        run: echo "TAG=v-${GITHUB_SHA::7}" >> $GITHUB_ENV
 
-      - name: Push Docker Image
-        run: docker push mohamed1410/devsecops-demo:latest
+      - name: Tag Docker Image
+        run: |
+          docker tag devsecops-demo mohamed1410/devsecops-demo:latest
+          docker tag devsecops-demo mohamed1410/devsecops-demo:${TAG}
+
+      - name: Push Docker Images
+        run: |
+          docker push mohamed1410/devsecops-demo:latest
+          docker push mohamed1410/devsecops-demo:${TAG}
