@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devsecops-app
+  labels:
+    app: devsecops
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: devsecops
+  template:
+    metadata:
+      labels:
+        app: devsecops
+    spec:
+      containers:
+      - name: devsecops-container
+        image: mohamed1410/devsecops-demo:latest
+        ports:
+        - containerPort: 5000
+        env:
+        - name: APP_VERSION
+          value: "k8s-deployed"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: devsecops-service
+spec:
+  selector:
+    app: devsecops
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000
+  type: LoadBalancer
