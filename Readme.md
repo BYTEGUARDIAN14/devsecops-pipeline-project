@@ -1,11 +1,9 @@
 # DevSecOps CI/CD Pipeline Project
 ![CI Pipeline](https://github.com/BYTEGUARDIAN14/devsecops-pipeline-project/actions/workflows/pipeline.yml/badge.svg)
 
-A beginner-to-intermediate **DevSecOps project** demonstrating how to build a secure CI/CD pipeline using modern DevOps tools.
+A beginner to-intermediate **DevSecOps project** demonstrating how to build a secure CI/CD pipeline using modern DevOps tools.
 
 This project shows how code changes automatically trigger testing, container builds, and vulnerability scanning using GitHub Actions.
-
----
 
 ## Project Overview
 
